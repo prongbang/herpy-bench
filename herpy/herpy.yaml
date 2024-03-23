@@ -1,10 +1,5 @@
 ---
 port: 8080
-authorization:
-  authorize_token:
-    host: "https://httpbin.org"
-    path: "/post"
-    method: POST
 services:
   - endpoint: "/hello"
     method: GET
