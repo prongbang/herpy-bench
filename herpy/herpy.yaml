@@ -1,5 +1,6 @@
 ---
-port: 8080
+metadata:
+  port: 8080
 services:
   - endpoint: "/hello"
     method: GET
