@@ -1,8 +1,8 @@
 server:
-  port: 8090
+  port: 8070
 services:
-  - path: "/hello"
-    stripPath: true
+  - path: "/"
+    stripPath: false
     timeout: 60
     servers:
-      - "https://prices.wachasit.com/"
+      - "http://localhost:8000"
