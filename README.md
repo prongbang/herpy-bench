@@ -4,9 +4,9 @@ Herpy API Gateway Benchmark
 
 ### Benchmark
 
-- Mac Studio 2022
-- Chip Apple M1 Max
-- Memory 32 GB
+- Mac mini 2024
+- Chip Apple M4 Pro
+- Memory 24 GB
 
 ### LoadTest without API Gateway
 
@@ -16,11 +16,11 @@ wrk -t12 -c100 -d60s http://127.0.0.1:8000/v1/hello
 Running 1m test @ http://127.0.0.1:8000/v1/hello
   12 threads and 100 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     5.51ms   24.68ms 395.91ms   95.49%
-    Req/Sec    13.44k     8.87k  211.81k    89.36%
-  9403288 requests in 1.00m, 1.15GB read
-Requests/sec: 156474.47
-Transfer/sec:     19.55MB
+    Latency   582.59us  128.13us  21.90ms   97.05%
+    Req/Sec    13.59k   321.06    18.57k    91.16%
+  9747178 requests in 1.00m, 1.19GB read
+Requests/sec: 162184.34
+Transfer/sec:     20.26MB
 ```
 
 ### LoadTest Herpy API Gateway
@@ -31,11 +31,12 @@ wrk -t12 -c100 -d60s http://127.0.0.1:8080/hello
 Running 1m test @ http://127.0.0.1:8080/hello
   12 threads and 100 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     2.14ms    8.55ms 272.67ms   98.09%
-    Req/Sec     6.85k     1.14k   12.84k    83.34%
-  4916822 requests in 1.00m, 614.27MB read
-Requests/sec:  81811.14
-Transfer/sec:     10.22MB
+    Latency     1.11ms   63.59us   5.81ms   82.77%
+    Req/Sec     7.21k   113.46     7.47k    79.31%
+  5173684 requests in 1.00m, 646.36MB read
+  Non-2xx or 3xx responses: 23
+Requests/sec:  86084.10
+Transfer/sec:     10.75MB
 ```
 
 ### LoadTest Zolly API Gateway
@@ -46,11 +47,11 @@ wrk -t12 -c100 -d60s http://127.0.0.1:8070/v1/hello
 Running 1m test @ http://127.0.0.1:8070/v1/hello
   12 threads and 100 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     2.44ms    8.68ms 253.62ms   97.28%
-    Req/Sec     6.33k     1.44k   17.85k    79.91%
-  4545014 requests in 1.00m, 567.81MB read
-Requests/sec:  75621.61
-Transfer/sec:      9.45MB
+    Latency     1.54ms  262.81us  41.65ms   92.11%
+    Req/Sec     5.21k   269.46     9.00k    90.83%
+  3739133 requests in 1.00m, 467.13MB read
+Requests/sec:  62213.64
+Transfer/sec:      7.77MB
 ```
 
 ### LoadTest KrakenD API Gateway
@@ -61,11 +62,11 @@ wrk -t12 -c100 -d60s http://127.0.0.1:8090/hello
 Running 1m test @ http://127.0.0.1:8090/hello
   12 threads and 100 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     3.03ms    5.69ms 111.44ms   96.09%
-    Req/Sec     3.69k     1.00k    6.61k    75.60%
-  2647991 requests in 1.00m, 593.45MB read
-Requests/sec:  44109.90
-Transfer/sec:      9.89MB
+    Latency     1.61ms  629.55us  29.75ms   79.79%
+    Req/Sec     5.03k   294.94    14.10k    88.27%
+  3602395 requests in 1.00m, 807.35MB read
+Requests/sec:  59940.37
+Transfer/sec:     13.43MB
 ```
 
 ### LoadTest Nginx API Gateway
